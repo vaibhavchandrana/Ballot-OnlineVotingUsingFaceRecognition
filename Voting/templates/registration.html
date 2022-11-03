@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/static/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/css/signin.css">
+</head>
+<body>
+    <div class="container extra" >
+        <div class="title">Registration</div>
+        <div class="content">
+  <!--------------------registration form start here-------------------------------------->
+
+          <form method="post"   onsubmit=" return validate()" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="user-details">
+              <div class="input-box">
+                <span class="details">Full Name</span>
+                <input type="text" placeholder="Enter your name" id="name" name="name" required>
+                <br><span id="error1" class="error"></span>
+              </div>
+              <div class="input-box">
+                <span class="details">Email</span>
+                <input type="Email" placeholder="Enter your Email" id="email"name="email" required>
+              </div>
+              <div class="input-box">
+                <span class="details">Age</span>
+                <input type="text" placeholder="enter your age" name="age" id="age"required>
+                <br><span id="errorAge" class="error"></span>
+              </div>
+              <div class="input-box">
+                <span class="details">Phone Number</span>
+                <input type="text" placeholder="Enter your number" id="phone" name="phone"required>
+                <br><span id="error2" class="error"></span>
+              </div>
+              <div class="input-box">
+                <span class="details">Password</span>
+                <input type="password" placeholder="Enter your password" id="pass" name="pass"required>
+                <br><span id="error3" class="error"></span>
+              </div>
+              <div class="input-box">
+                <span class="details">Confirm Password</span>
+                <input type="password" placeholder="Confirm your password" id="cpass" name="c_pass"required>
+                <br><span id="error4" class="error"></span>
+              </div>
+              <div class="input-box">
+                <span class="details">Upload your image</span>
+                <input type="file"  name="image" required>
+              </div>
+            </div>
+            <br><span id="error5" class="error"></span>
+            <div class="button">
+              <input type="submit" value="Register" id="mysubmit">
+            </div>
+            
+          </form>
+   <!-------------------- registration form ends here-------------------------------------->
+
+        </div>
+        <div class="signup1">
+            <i style="color:white;"> Registered Already </i>
+<!--------------------link to login page  -------------------------------------->
+
+             <a  href={% url 'login' %}><button class="btn">Sign in</button></a>
+          </div>
+      </div>
+
+<script src="/static/js/validation.js" defer ></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/profile.css">
+    <link rel="stylesheet" href="/static/css/voting_navbar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+</head>
+
+<body>
+<!--------------------navbar start here-------------------------------------->
+
+  <nav>
+    <div class="logo">Ballot</div>
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+      <li><a  href="{% url 'signup' %}">Register</a></li>
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a class="active" href="{% url 'profile' %}">Profile</a></li>
+      <li><a  href="{% url 'voting' %}">Voting Area</a></li>
+      <li><a href="{% url 'result' %}">Result</a></li>
+      <li><a href="{% url 'logout' %}">Logout </a></li>
+    </ul>
+  </nav>
+        <!--------------------navbar ends here-------------------------------------->
+
+    <section>
+        <div class="ring1"></div>
+        <!--------------------card for profile start here-------------------------------------->
+
+        <div class="profile-card">
+            <center><img src="/static/images/bharat.png" alt="" class="img1"></center>
+            <p>Election commission of India</p><br>
+            <p>ELECTORS PHOTO IDENTITY CARD</p>
+                    <!--------------------user profile photo -------------------------------------->
+
+            <center><img src="{{fav.profile.url}}" alt="" id="img2" style ="margin-top:5%"></center>
+            <br>
+            <center><img src="/static/images/bar.png" alt="" id="img3"></center>
+
+             <form>
+                <center> Voter id : {{fav.voter_id}}</center>
+             </form>
+
+            <div class="detail">
+                <form >
+                    <br>
+                    Name : {{ fav.name }}<br><br>
+                    Email : {{ fav.email }}<br><br>
+                    Age : {{ fav.age }}<br><br>
+                    Phone No : {{ fav.phone }}<br><br>
+                </form>
+            </div>
+        </div>
+        <div class="ring2"></div>
+    </section>
+
+
+</body>

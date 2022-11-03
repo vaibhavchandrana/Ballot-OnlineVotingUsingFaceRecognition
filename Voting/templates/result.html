@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>result</title>
+    <!------------main css -------------->
+    <link rel="stylesheet" href="/static/css/voting_navbar.css">
+    <link rel="stylesheet" href="/static/css/result.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+</head>
+<body>
+<!--------------------navbar start here-------------------------------------->
+
+  <nav>
+    <div class="logo">Ballot</div>
+    <input type="checkbox" id="click">
+    <label for="click" class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </label>
+    <ul>
+      <li><a  href="{% url 'signup' %}">Register</a></li>
+      <li><a href="{% url 'index' %}">Home</a></li>
+      <li><a href="{% url 'profile' %}">Profile</a></li>
+      <li><a  href="{% url 'voting' %}">Voting Area</a></li>
+      <li><a class="active" href="{% url 'result' %}">Result</a></li>
+      <li><a href="{% url 'logout' %}">Logout </a></li>
+    </ul>
+  </nav>
+<!--------------------navbar ends here-------------------------------------->
+
+    <!-------------------- candidate 1 votes detail -------------------------------------->
+    <div class="parent">
+    <div  class="child">
+      <h3 id="cd1">{{ fav.0.votes }}</h3>
+      <h4>Donald Trump</h4> 
+      <p>Republic Party</p>
+    </div>
+        <!-------------------- candidate 2 votes detail -------------------------------------->
+
+    <div  class="child">
+      <h3 id="cd2">{{ fav.1.votes}}</h3>
+      <h4>Joe Biden</h4> 
+      <p>Democratic Party</p>
+    </div>
+        <!-------------------- candidate 3 votes detail -------------------------------------->
+
+    <div class="child" >
+      <h3 id="cd3">{{ fav.2.votes }} </h3>
+      <h4>Barak Obama</h4> 
+      <p>Faderation Party</p>
+    </div>
+  </div>
+  <!-------------------- graphs section -------------------------------------->
+
+  <div class="graph">
+    <div class="graph1"><canvas id="myChart1" aria-label="chart" role="img" height="400" width="300"></canvas></div>
+    <div class="graph2"><canvas id="myChart2" aria-label="chart" role="img" height="300" width="300"></canvas></div>
+  </div>
+  <script src="/static/js/chartjs/chart.js"></script>
+  <script src="/static/js/chartjs/graphs.js"></script>
+  
+          
+    </body>
+</html>

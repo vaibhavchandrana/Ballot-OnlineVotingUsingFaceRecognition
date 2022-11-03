@@ -1,0 +1,53 @@
+/* this is css for home page page */
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+#main-section{
+    margin-top: 2%;
+    margin-bottom: 0%;
+    position: relative;
+}
+/* this is css for left container */
+
+#left-container{
+margin-left: 1%;
+margin-right: 5%;
+
+}
+#left-container h1{
+text-align: left;
+margin-top:5%;
+padding-top:10%;
+bottom: 2%;
+color: red;
+font-weight: bold;
+}
+#left-container p{
+margin-top:5%;
+text-align: left;
+color: white;
+}
+#left-container a{
+    margin-top: 0%;
+    background-color: none;
+    font-size: larger;
+    font-stretch: expanded;
+    color: red;
+    font-weight: bold;
+    border: none;
+    line-height: 5em;
+    text-align: left;
+}
+/* this is css for right container  */
+
+#right-container img{
+    width: 30%;
+    position:fixed;
+    right:0;
+    bottom: 0;
+    margin:0;
+    padding:0;
+
+}

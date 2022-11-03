@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+    <!-------------- main css ------------>
+    <link rel="stylesheet" href="/static/css/voting_navbar.css">
+    <link rel="stylesheet" href="/static/css/voting_new.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    
+</head>
+<body>
+    <!-------------------- navbar start from here -------------------------------------->
+
+    <nav>
+        <div class="logo">Ballot</div>
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+          <i class="fas fa-bars"></i>
+        </label>
+        <ul>
+          <li><a  href="{% url 'signup' %}">Register</a></li>
+          <li><a href="{% url 'index' %}">Home</a></li>
+          <li><a href="{% url 'profile' %}">Profile</a></li>
+          <li><a class="active" href="{% url 'voting' %}">Voting Area</a></li>
+          <li><a href="{% url 'result' %}">Result</a></li>
+          <li><a href="{% url 'logout' %}">Logout </a></li>
+        </ul>
+      </nav>
+        <!-------------------- navbar ends here -------------------------------------->
+    <!-------------------- candidate 1 detail -------------------------------------->
+      {% for candidate in cand %}
+       <div class="card">
+        <div class="card-body">
+            <div class="profile">
+                <img src="/static/images/profile.png" alt="">
+            </div>
+            <div class="detail">
+                <p id="big">{{candidate.name}}</p>
+                <br>
+                <p id="small">{{candidate.party}}</p>
+            </div>
+            <div class="voting-button">
+                <button onclick="vote({{candidate.id}});" id="{{candidate.id}}">Vote</button>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+      <!-------------------- candidate 2 detail -------------------------------------->
+
+            <!-------------------- candidate id detail -------------------------------------->
+
+        <form method="POST">
+            {% csrf_token %}
+            <input hidden type="text" id="candidate_id" name="candidate_id" value="0" >
+            <center><input type="submit" value="confirm" id="subbtn" onclick="subbtn()"></center>
+        </form>
+    <!-------------------- code for pop up -------------------------------------->
+
+        <div class="pop-up" id="popup">
+            <img src="/static/images/tick.png">
+            <h2>Thank you</h2>
+            <p>Your Vote is casted succesfully</p>
+            <button onclick="closepopup()">Ok</button>
+
+        </div>
+
+        <script src="/static/js/voting_page.js" defer></script>
+</body>
+</html>

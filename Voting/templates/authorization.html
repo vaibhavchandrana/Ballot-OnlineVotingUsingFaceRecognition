@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Authorisation</title>
+    <style>
+        .text{
+          margin-top: 10%;
+        }
+       .text h1{
+            font-size: 6rem;
+            color:#3A9BDC ;
+            font-family: fantasy;
+            letter-spacing: 0.3rem;
+        }
+        h3{
+            font-size: 3rem;
+        }
+        p{
+            font-size: 2rem;
+            color: red;
+        }
+        button,a{
+         background-color: #3A9BDC;
+         color: white;
+         text-decoration: none;
+         height: 40px;
+         width: 300px;
+         font-size: 1.5rem;
+         border-radius: 50px;
+        }
+
+    </style>
+</head>
+<body>
+    <!--------------------actual div strat here---------------------------------------->
+    <center><div class="text">
+        <h1>OOPS!</h1>
+        <h3>You are already registered</h3>
+        <p><b>NOTE : </b> One user can have only one account</p>
+    </div>
+    <button> <a href={% url 'login' %}>Back to login page</a> </button>
+</center>
+</body>
+</html>

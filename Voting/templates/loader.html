@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/static/fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/signin.css">
+    {% comment %} <link rel="stylesheet" href="/static/css/signin.css"> {% endcomment %}
+
+
+    <title>E-voting | Loding-Page</title>
+  </head>
+  <!-------------------- welcome image -------------------------------------->
+
+  <body onload="setTimeout(myFunction, 3000)" >
+    <div id="loader">
+        <img src="/static/images/giphy.gif" alt="loder Image" id="image">
+    </div>
+    <div class="container">
+    <div class="title">Login</div>
+        <br>
+        <div class="content">
+  <!-------------------- form  start here-------------------------------------->
+
+          <form method="post">
+            <div class="user-details">
+            {% csrf_token %}
+              <h2 style='color:red;'>{{error1}}</h2>
+              <div class="input-box">
+                <span class="details">Username</span>
+                <input type="Email" placeholder="Enter your Username(Email)" name="email" required>
+              </div><br><br><br>
+              <div class="input-box">
+                <span class="details">Password</span>
+                <input type="password" placeholder="Enter your password" name="pass" required>
+              </div>
+            </div>
+            <div class="button">
+              <input type="submit" name="signin" value="Login">
+            </div>
+          </form>
+  <!---------------------------- form ends here-------------------------------------------->
+
+          <div class="signup1">
+            <i style="color:white;"> Visting for first time?</i>
+             <a  href={% url 'author' %}><button class="btn">Sign up</button></a>
+          </div>
+        </div>
+    </div>
+    </div>
+        
+
+    <!--  JavaScript for logo-->
+    <script>
+        var preloader = document.getElementById("loader");
+         function myFunction(){
+            preloader.style.display = "none";
+         }
+    </script>
+  </body>
